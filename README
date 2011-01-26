@@ -1,0 +1,1 @@
+Library for handling threading and queues within iOS. Both with blocks and without (i.e. iOS 3.1)
