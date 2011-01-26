@@ -41,6 +41,40 @@
 }
 
 #pragma mark -
+#pragma mark Operations
+
+- (void) performOperation:(NSOperation*) operation {
+	[self.queue addOperation:operation];
+}
+
+#pragma mark -
+#pragma mark Selectors
+
+- (void) performSelectorOnTarget:(id) target selector:(SEL) selector {
+	
+}
+
+- (void) performSelectorOnTarget:(id) target selector:(SEL) selector withObject:(id) argument {
+	
+}
+
+- (void) performSelectorOnTarget:(id) target selector:(SEL) selector withObject:(id) argument1 withObject:(id) argument2 {
+	
+}
+
+- (void) performSelectorOnTarget:(id) target selector:(SEL) selector callbackTarget:(id) callbackTarget callbackSelector:(SEL) callbackSelector {
+	
+}
+
+- (void) performSelectorOnTarget:(id) target selector:(SEL) selector withObject:(id) argument callbackTarget:(id) callbackTarget callbackSelector:(SEL) callbackSelector {
+	
+}
+
+- (void) performSelectorOnTarget:(id) target selector:(SEL) selector withObject:(id) argument1 withObject:(id) argument2 callbackTarget:(id) callbackTarget callbackSelector:(SEL) callbackSelector {
+	
+}
+
+#pragma mark -
 #pragma mark Blocks
 
 - (void) performBlockWithQueuePriority:(NSOperationQueuePriority) inQueuePriority withThreadPriority:(Float64) inThreadPriority block:(void (^)(void)) block {
@@ -48,7 +82,7 @@
 		NSBlockOperation* blockOperation = [NSBlockOperation blockOperationWithBlock:[[block copy] autorelease]];
 		blockOperation.queuePriority = self.queuePriority;
 		blockOperation.threadPriority = self.threadPriority;
-		[self.queue addOperation:blockOperation];
+		[self performOperation:blockOperation];
 	}
 }
 

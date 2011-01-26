@@ -10,6 +10,16 @@
 
 - (id) initWithPropertyList:(NSString*) pathForResource;
 
+- (void) performOperationOnQueue:(NSString*) queueName operation:(NSOperation*) operation;
+
+- (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector;
+- (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector withObject:(id) argument;
+- (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector withObject:(id) argument1 withObject:(id) argument2;
+
+- (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector callbackTarget:(id) callbackTarget callbackSelector:(SEL) callbackSelector;
+- (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector withObject:(id) argument callbackTarget:(id) callbackTarget callbackSelector:(SEL) callbackSelector;
+- (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector withObject:(id) argument1 withObject:(id) argument2 callbackTarget:(id) callbackTarget callbackSelector:(SEL) callbackSelector;
+
 - (void) performBlockOnQueue:(NSString*) queueName block:(void (^)(void)) block;
 - (void) performBlockOnQueue:(NSString*) queueName withQueuePriority:(NSOperationQueuePriority) queuePriority block:(void (^)(void)) block;
 - (void) performBlockOnQueue:(NSString*) queueName withThreadPriority:(Float32) threadPriority block:(void (^)(void)) block;

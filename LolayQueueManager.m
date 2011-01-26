@@ -78,6 +78,54 @@
 }
 
 #pragma mark -
+#pragma mark Operations
+
+- (void) performOperationOnQueue:(NSString*) queueName operation:(NSOperation*) operation {
+	LolayQueueInfo* queue = [[queues objectForKey:queueName] retain];
+	[queue performOperation:operation];
+	[queue release];
+}
+
+#pragma mark -
+#pragma mark Selectors
+
+- (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector {
+	LolayQueueInfo* queue = [[queues objectForKey:queueName] retain];
+	[queue performSelectorOnTarget:target selector:selector];
+	[queue release];
+}
+
+- (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector withObject:(id) argument {
+	LolayQueueInfo* queue = [[queues objectForKey:queueName] retain];
+	[queue performSelectorOnTarget:target selector:selector withObject:argument];
+	[queue release];
+}
+
+- (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector withObject:(id) argument1 withObject:(id) argument2 {
+	LolayQueueInfo* queue = [[queues objectForKey:queueName] retain];
+	[queue performSelectorOnTarget:target selector:selector withObject:argument1 withObject:argument2];
+	[queue release];
+}
+
+- (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector callbackTarget:(id) callbackTarget callbackSelector:(SEL) callbackSelector {
+	LolayQueueInfo* queue = [[queues objectForKey:queueName] retain];
+	[queue performSelectorOnTarget:target selector:selector callbackTarget:callbackTarget callbackSelector:callbackSelector];
+	[queue release];
+}
+
+- (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector withObject:(id) argument callbackTarget:(id) callbackTarget callbackSelector:(SEL) callbackSelector {
+	LolayQueueInfo* queue = [[queues objectForKey:queueName] retain];
+	[queue performSelectorOnTarget:target selector:selector withObject:argument callbackTarget:callbackTarget callbackSelector:callbackSelector];
+	[queue release];
+}
+
+- (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector withObject:(id) argument1 withObject:(id) argument2 callbackTarget:(id) callbackTarget callbackSelector:(SEL) callbackSelector {
+	LolayQueueInfo* queue = [[queues objectForKey:queueName] retain];
+	[queue performSelectorOnTarget:target selector:selector withObject:argument1 withObject:argument2 callbackTarget:callbackTarget callbackSelector:callbackSelector];
+	[queue release];
+}
+
+#pragma mark -
 #pragma mark Blocks
 
 - (void) performBlockOnQueue:(NSString*) queueName block:(void (^)(void)) block {
