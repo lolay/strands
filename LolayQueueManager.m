@@ -17,7 +17,7 @@
 #pragma mark Lifecycle
 
 - (id) initWithPropertyList:(NSString*) pathForResource {
-	NSLog(@"[LolayQueueManager initWithPropertyList] enter");
+	DLog(@"enter");
 	self = [super init];
 	
 	if (self) {
@@ -56,7 +56,7 @@
 			
 				[self.queues setObject:queueInfo forKey:name];
 				
-				NSLog(@"[LolayQueueManager initWithPropertyList] loaded queue=%@", queueInfo);
+				DLog(@"loaded queue=%@", queueInfo);
 				
 				[queue release];
 				[queueInfo release];
