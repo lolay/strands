@@ -4,7 +4,9 @@
 //
 #import <Foundation/Foundation.h>
 
+#if __IPHONE_OS_VERSION_MIN_REQUIRED > __IPHONE_3_1
 #define LolayQueueManagerMainQueue @"main"
+#endif
 
 @interface LolayQueueManager : NSObject
 
@@ -20,10 +22,12 @@
 - (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector withObject:(id) argument callbackTarget:(id) callbackTarget callbackSelector:(SEL) callbackSelector;
 - (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector withObject:(id) argument1 withObject:(id) argument2 callbackTarget:(id) callbackTarget callbackSelector:(SEL) callbackSelector;
 
+#if __IPHONE_OS_VERSION_MIN_REQUIRED > __IPHONE_3_1
 - (void) performBlockOnQueue:(NSString*) queueName block:(void (^)(void)) block;
 - (void) performBlockOnQueue:(NSString*) queueName withQueuePriority:(NSOperationQueuePriority) queuePriority block:(void (^)(void)) block;
 - (void) performBlockOnQueue:(NSString*) queueName withThreadPriority:(Float32) threadPriority block:(void (^)(void)) block;
 - (void) performBlockOnQueue:(NSString*) queueName withQueuePriority:(NSOperationQueuePriority) queuePriority withThreadPriority:(Float32) threadPriority block:(void (^)(void)) block;
+#endif
 
 - (void) suspendQueue:(NSString*) queueName;
 - (void) resumeQueue:(NSString*) queueName;

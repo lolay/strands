@@ -90,6 +90,8 @@
 #pragma mark -
 #pragma mark Blocks
 
+#if __IPHONE_OS_VERSION_MIN_REQUIRED > __IPHONE_3_1
+
 - (void) performBlockWithQueuePriority:(NSOperationQueuePriority) inQueuePriority withThreadPriority:(Float64) inThreadPriority block:(void (^)(void)) block {
 	if (block) {
 		NSBlockOperation* blockOperation = [NSBlockOperation blockOperationWithBlock:[[block copy] autorelease]];
@@ -110,6 +112,8 @@
 - (void) performBlock:(void (^)(void)) block {
 	[self performBlockWithQueuePriority:self.queuePriority withThreadPriority:self.threadPriority block:block];
 }
+
+#endif
 
 #pragma mark -
 #pragma mark Queue Controls
