@@ -28,7 +28,7 @@
 		self.queues = [NSMutableDictionary dictionaryWithCapacity:configQueues.count];
 		
 		Float64 defaultThreadPriority = 0.5; //[[NSBlockOperation blockOperationWithBlock:NULL] threadPriority];
-#if __IPHONE_OS_VERSION_MIN_REQUIRED > __IPHONE_3_1
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0
 		NSOperationQueue* mainQueue = [[NSOperationQueue mainQueue] retain];
 		LolayQueueInfo* mainQueueInfo = [[LolayQueueInfo alloc] initWithQueue:mainQueue withQueuePriority:NSOperationQueuePriorityNormal withThreadPriority:defaultThreadPriority];
 		[self.queues setObject:mainQueueInfo forKey:@"main"];
@@ -43,7 +43,7 @@
 
 			if (name) {
 				NSOperationQueue* queue = [NSOperationQueue new];
-#if __IPHONE_OS_VERSION_MIN_REQUIRED > __IPHONE_3_1
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0
 				queue.name = name;
 #endif		
 				if (maxConcurrentOperationCount) {
@@ -131,7 +131,7 @@
 #pragma mark -
 #pragma mark Blocks
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED > __IPHONE_3_1
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0
 
 - (void) performBlockOnQueue:(NSString*) queueName block:(void (^)(void)) block {
 	LolayQueueInfo* queue = [[queues objectForKey:queueName] retain];

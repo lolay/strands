@@ -37,8 +37,13 @@
 }
 
 - (NSString*) description {
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0
 	return [NSString stringWithFormat:@"<LolayQueueInfo queue.name=%@, queue.maxConcurrentOperationCount=%i, queuePriority=%i, threadPriority=%f>",
 			self.queue.name, self.queue.maxConcurrentOperationCount, self.queuePriority, self.threadPriority];
+#else
+	return [NSString stringWithFormat:@"<LolayQueueInfo queue.maxConcurrentOperationCount=%i, queuePriority=%i, threadPriority=%f>",
+			self.queue.maxConcurrentOperationCount, self.queuePriority, self.threadPriority];
+#endif
 }
 
 #pragma mark -
@@ -90,7 +95,7 @@
 #pragma mark -
 #pragma mark Blocks
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED > __IPHONE_3_1
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0
 
 - (void) performBlockWithQueuePriority:(NSOperationQueuePriority) inQueuePriority withThreadPriority:(Float64) inThreadPriority block:(void (^)(void)) block {
 	if (block) {

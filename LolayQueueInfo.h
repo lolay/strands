@@ -10,7 +10,7 @@
 
 - (void) performOperation:(NSOperation*) operation;
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED > __IPHONE_3_1
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0
 - (void) performBlock:(void (^)(void)) block;
 - (void) performBlockWithQueuePriority:(NSOperationQueuePriority) inQueuePriority block:(void (^)(void)) block;
 - (void) performBlockWithThreadPriority:(Float64) inThreadPriority block:(void (^)(void)) block;
