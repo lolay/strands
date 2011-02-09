@@ -74,24 +74,6 @@
 	[operation release];
 }
 
-- (void) performSelectorOnTarget:(id) target selector:(SEL) selector callbackTarget:(id) callbackTarget callbackSelector:(SEL) callbackSelector {
-	NSOperation* operation = [[LolaySelectorOperation alloc] initWithTarget:target withSelector:selector withCallbackTarget:callbackTarget withCallbackSelector:callbackSelector];
-	[self performOperation:operation];
-	[operation release];
-}
-
-- (void) performSelectorOnTarget:(id) target selector:(SEL) selector withObject:(id) argument callbackTarget:(id) callbackTarget callbackSelector:(SEL) callbackSelector {
-	NSOperation* operation = [[LolaySelectorOperation alloc] initWithTarget:target withSelector:selector withObject:argument withCallbackTarget:callbackTarget withCallbackSelector:callbackSelector];
-	[self performOperation:operation];
-	[operation release];
-}
-
-- (void) performSelectorOnTarget:(id) target selector:(SEL) selector withObject:(id) argument1 withObject:(id) argument2 callbackTarget:(id) callbackTarget callbackSelector:(SEL) callbackSelector {
-	NSOperation* operation = [[LolaySelectorOperation alloc] initWithTarget:target withSelector:selector withObject:argument1 withObject:argument2 withCallbackTarget:callbackTarget withCallbackSelector:callbackSelector];
-	[self performOperation:operation];
-	[operation release];
-}
-
 #pragma mark -
 #pragma mark Blocks
 
