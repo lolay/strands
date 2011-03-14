@@ -15,6 +15,11 @@
 
 @implementation LolayQueueInfo
 
+@synthesize queue;
+@synthesize queuePriority;
+@synthesize threadPriority;
+
+
 #pragma mark -
 #pragma mark Lifecycle
 

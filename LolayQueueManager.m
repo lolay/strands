@@ -13,6 +13,8 @@
 
 @implementation LolayQueueManager
 
+@synthesize queues;
+
 #pragma mark -
 #pragma mark Lifecycle
 

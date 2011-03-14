@@ -15,6 +15,13 @@
 
 @implementation LolaySelectorOperation
 
+@synthesize target;
+@synthesize selector;
+@synthesize object1;
+@synthesize object2;
+@synthesize callbackTarget;
+@synthesize callbackSelector;
+
 - (id) initWithTarget:(id) inTarget withSelector:(SEL) inSelector {
 	return [self initWithTarget:inTarget withSelector:inSelector withObject:nil withObject:nil];
 }
