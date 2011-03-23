@@ -118,25 +118,25 @@
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0
 
 - (void) performBlockOnQueue:(NSString*) queueName block:(void (^)(void)) block {
-	LolayQueueInfo* queue = [[queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
 	[queue performBlock:block];
 	[queue release];
 }
 
 - (void) performBlockOnQueue:(NSString*) queueName withQueuePriority:(NSOperationQueuePriority) queuePriority block:(void (^)(void)) block {
-	LolayQueueInfo* queue = [[queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
 	[queue performBlockWithQueuePriority:queuePriority block:block];
 	[queue release];
 }
 
 - (void) performBlockOnQueue:(NSString*) queueName withThreadPriority:(float) threadPriority block:(void (^)(void)) block {
-	LolayQueueInfo* queue = [[queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
 	[queue performBlockWithThreadPriority:threadPriority block:block];
 	[queue release];
 }
 
 - (void) performBlockOnQueue:(NSString*) queueName withQueuePriority:(NSOperationQueuePriority) queuePriority withThreadPriority:(float) threadPriority block:(void (^)(void)) block {
-	LolayQueueInfo* queue = [[queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
 	[queue performBlockWithQueuePriority:queuePriority withThreadPriority:threadPriority block:block];
 	[queue release];
 }
