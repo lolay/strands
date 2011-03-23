@@ -86,7 +86,7 @@
 #pragma mark Operations
 
 - (void) performOperationOnQueue:(NSString*) queueName operation:(NSOperation*) operation {
-	LolayQueueInfo* queue = [[queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
 	[queue performOperation:operation];
 	[queue release];
 }
@@ -95,19 +95,19 @@
 #pragma mark Selectors
 
 - (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector {
-	LolayQueueInfo* queue = [[queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
 	[queue performSelectorOnTarget:target selector:selector];
 	[queue release];
 }
 
 - (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector withObject:(id) argument {
-	LolayQueueInfo* queue = [[queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
 	[queue performSelectorOnTarget:target selector:selector withObject:argument];
 	[queue release];
 }
 
 - (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector withObject:(id) argument1 withObject:(id) argument2 {
-	LolayQueueInfo* queue = [[queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
 	[queue performSelectorOnTarget:target selector:selector withObject:argument1 withObject:argument2];
 	[queue release];
 }
@@ -147,19 +147,19 @@
 #pragma mark Queue Controls
 
 - (void) suspendQueue:(NSString*) queueName {
-	LolayQueueInfo* queue = [[queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
 	[queue suspend];
 	[queue release];
 }
 
 - (void) resumeQueue:(NSString*) queueName {
-	LolayQueueInfo* queue = [[queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
 	[queue resume];
 	[queue release];
 }
 
 - (void) cancelAllOperationsOnQueue:(NSString*) queueName {
-	LolayQueueInfo* queue = [[queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
 	[queue cancelAllOperations];
 	[queue release];
 }
