@@ -15,10 +15,10 @@
 
 @implementation LolaySelectorOperation
 
-@synthesize target;
-@synthesize selector;
-@synthesize object1;
-@synthesize object2;
+@synthesize target = target_;
+@synthesize selector = selector_;
+@synthesize object1 = object1_;
+@synthesize object2 = object2_;
 
 - (id) initWithTarget:(id) inTarget withSelector:(SEL) inSelector {
 	return [self initWithTarget:inTarget withSelector:inSelector withObject:nil withObject:nil];

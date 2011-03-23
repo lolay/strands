@@ -15,10 +15,9 @@
 
 @implementation LolayQueueInfo
 
-@synthesize queue;
-@synthesize queuePriority;
-@synthesize threadPriority;
-
+@synthesize queue = queue_;
+@synthesize queuePriority = queuePriority_;
+@synthesize threadPriority = threadPriority_;
 
 #pragma mark -
 #pragma mark Lifecycle
