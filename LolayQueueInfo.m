@@ -121,4 +121,10 @@
 	[self.queue cancelAllOperations];
 }
 
+#pragma mark - Status
+
+- (NSUInteger) operationCount {
+    return [self.queue operationCount];
+}
+
 @end

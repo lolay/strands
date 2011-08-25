@@ -30,4 +30,6 @@
 
 - (void) cancelAllOperationsOnQueue:(NSString*) queueName;
 
+- (NSArray*) activeQueues;
+
 @end

@@ -164,4 +164,19 @@
 	[queue release];
 }
 
+- (NSArray*) activeQueues {
+    NSMutableArray* activeQueueNames = [[NSMutableArray alloc] initWithCapacity:0];
+    if (self.queues && self.queues.count > 0) {
+        NSString* queueName = nil;
+        NSEnumerator* queueEnumerator = self.queues.keyEnumerator;
+        while (queueName = [queueEnumerator nextObject]) {
+            LolayQueueInfo* queue = [self.queues objectForKey:queueName];      
+            if (queue.operationCount > 0) {
+                [activeQueueNames addObject:queue];
+            }
+        }
+    }
+    return [activeQueueNames autorelease];
+}
+
 @end

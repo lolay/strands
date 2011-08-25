@@ -23,7 +23,8 @@
 
 - (void) suspend;
 - (void) resume;
-
 - (void) cancelAllOperations;
+
+- (NSUInteger) operationCount;
 
 @end
