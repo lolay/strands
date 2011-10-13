@@ -23,25 +23,22 @@
 	self = [super init];
 	
 	if (self) {
-		NSString* filePath = [[[NSBundle mainBundle] pathForResource:pathForResource ofType:@"plist"] retain];
-		NSArray* configQueues = [[NSArray arrayWithContentsOfFile:filePath] retain];
-		[filePath release];
+		NSString* filePath = [[NSBundle mainBundle] pathForResource:pathForResource ofType:@"plist"];
+		NSArray* configQueues = [NSArray arrayWithContentsOfFile:filePath];
 		
 		self.queues = [NSMutableDictionary dictionaryWithCapacity:configQueues.count];
 		
 		Float64 defaultThreadPriority = 0.5; //[[NSBlockOperation blockOperationWithBlock:NULL] threadPriority];
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0
-		NSOperationQueue* mainQueue = [[NSOperationQueue mainQueue] retain];
+		NSOperationQueue* mainQueue = [NSOperationQueue mainQueue];
 		LolayQueueInfo* mainQueueInfo = [[LolayQueueInfo alloc] initWithQueue:mainQueue withQueuePriority:NSOperationQueuePriorityNormal withThreadPriority:defaultThreadPriority];
 		[self.queues setObject:mainQueueInfo forKey:@"main"];
-		[mainQueueInfo release];
-		[mainQueue release];
 #endif		
 		for (NSDictionary* configQueue in configQueues) {
-			NSString* name = [[configQueue objectForKey:@"name"] retain];
-			NSNumber* maxConcurrentOperationCount = [[configQueue objectForKey:@"maxConcurrentOperationCount"] retain];
-			NSNumber* queuePriority = [[configQueue objectForKey:@"queuePriority"] retain];
-			NSNumber* threadPriority = [[configQueue objectForKey:@"threadPriority"] retain];
+			NSString* name = [configQueue objectForKey:@"name"];
+			NSNumber* maxConcurrentOperationCount = [configQueue objectForKey:@"maxConcurrentOperationCount"];
+			NSNumber* queuePriority = [configQueue objectForKey:@"queuePriority"];
+			NSNumber* threadPriority = [configQueue objectForKey:@"threadPriority"];
 
 			if (name) {
 				NSOperationQueue* queue = [NSOperationQueue new];
@@ -59,57 +56,37 @@
 				[self.queues setObject:queueInfo forKey:name];
 				
 				DLog(@"loaded queue=%@", queueInfo);
-				
-				[queue release];
-				[queueInfo release];
 			}
-			
-			[name release];
-			[maxConcurrentOperationCount release];
-			[queuePriority release];
-			[threadPriority release];
 		}
-		
-		[configQueues release];
 	}
 	
 	return self;
-}
-
-- (void) dealloc {
-	self.queues = nil;
-	
-	[super dealloc];
 }
 
 #pragma mark -
 #pragma mark Operations
 
 - (void) performOperationOnQueue:(NSString*) queueName operation:(NSOperation*) operation {
-	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [self.queues objectForKey:queueName];
 	[queue performOperation:operation];
-	[queue release];
 }
 
 #pragma mark -
 #pragma mark Selectors
 
 - (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector {
-	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [self.queues objectForKey:queueName];
 	[queue performSelectorOnTarget:target selector:selector];
-	[queue release];
 }
 
 - (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector withObject:(id) argument {
-	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [self.queues objectForKey:queueName];
 	[queue performSelectorOnTarget:target selector:selector withObject:argument];
-	[queue release];
 }
 
 - (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector withObject:(id) argument1 withObject:(id) argument2 {
-	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [self.queues objectForKey:queueName];
 	[queue performSelectorOnTarget:target selector:selector withObject:argument1 withObject:argument2];
-	[queue release];
 }
 
 #pragma mark -
@@ -118,27 +95,23 @@
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0
 
 - (void) performBlockOnQueue:(NSString*) queueName block:(void (^)(void)) block {
-	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [self.queues objectForKey:queueName];
 	[queue performBlock:block];
-	[queue release];
 }
 
 - (void) performBlockOnQueue:(NSString*) queueName withQueuePriority:(NSOperationQueuePriority) queuePriority block:(void (^)(void)) block {
-	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [self.queues objectForKey:queueName];
 	[queue performBlockWithQueuePriority:queuePriority block:block];
-	[queue release];
 }
 
 - (void) performBlockOnQueue:(NSString*) queueName withThreadPriority:(float) threadPriority block:(void (^)(void)) block {
-	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [self.queues objectForKey:queueName];
 	[queue performBlockWithThreadPriority:threadPriority block:block];
-	[queue release];
 }
 
 - (void) performBlockOnQueue:(NSString*) queueName withQueuePriority:(NSOperationQueuePriority) queuePriority withThreadPriority:(float) threadPriority block:(void (^)(void)) block {
-	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [self.queues objectForKey:queueName];
 	[queue performBlockWithQueuePriority:queuePriority withThreadPriority:threadPriority block:block];
-	[queue release];
 }
 
 #endif
@@ -147,21 +120,18 @@
 #pragma mark Queue Controls
 
 - (void) suspendQueue:(NSString*) queueName {
-	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [self.queues objectForKey:queueName];
 	[queue suspend];
-	[queue release];
 }
 
 - (void) resumeQueue:(NSString*) queueName {
-	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [self.queues objectForKey:queueName];
 	[queue resume];
-	[queue release];
 }
 
 - (void) cancelAllOperationsOnQueue:(NSString*) queueName {
-	LolayQueueInfo* queue = [[self.queues objectForKey:queueName] retain];
+	LolayQueueInfo* queue = [self.queues objectForKey:queueName];
 	[queue cancelAllOperations];
-	[queue release];
 }
 
 - (NSArray*) activeQueues {
@@ -176,7 +146,7 @@
             }
         }
     }
-    return [activeQueueNames autorelease];
+    return activeQueueNames;
 }
 
 @end

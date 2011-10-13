@@ -2,6 +2,7 @@
 //  Created by Lolay, Inc.
 //  Copyright 2011 Lolay, Inc. All rights reserved.
 //
+#import <objc/message.h>
 #import "LolaySelectorOperation.h"
 
 @interface LolaySelectorOperation ()
@@ -41,14 +42,6 @@
 	return self;
 }
 
-- (void) dealloc {
-	self.target = nil;
-	self.object1 = nil;
-	self.object2 = nil;
-	
-	[super dealloc];
-}
-
 - (void) main {
 	if ([self isCancelled]) {
 		return;
@@ -60,11 +53,14 @@
 	
 	if ([self.target respondsToSelector:self.selector]) {
 		if (self.object1 == nil && self.object2 == nil) {
-			[self.target performSelector:self.selector];
+            // TODO when Apple has a better mechanism for masking the "PerformSelector may cause a leak because its selector is unknown" warning, use it
+            objc_msgSend(self.target, self.selector);
 		} else if (self.object2 == nil) {
-			[self.target performSelector:self.selector withObject:self.object1];
+            // TODO when Apple has a better mechanism for masking the "PerformSelector may cause a leak because its selector is unknown" warning, use it
+            objc_msgSend(self.target, self.selector, self.object1);
 		} else {
-			[self.target performSelector:self.selector withObject:self.object1 withObject:self.object2];
+            // TODO when Apple has a better mechanism for masking the "PerformSelector may cause a leak because its selector is unknown" warning, use it
+            objc_msgSend(self.target, self.selector, self.object1, self.object2);
 		}
 	}
 }

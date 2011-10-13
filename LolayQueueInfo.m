@@ -34,12 +34,6 @@
 	return self;
 }
 
-- (void) dealloc {
-	self.queue = nil;
-	
-	[super dealloc];
-}
-
 - (NSString*) description {
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0
 	return [NSString stringWithFormat:@"<LolayQueueInfo queue.name=%@, queue.maxConcurrentOperationCount=%i, queuePriority=%i, threadPriority=%f>",
@@ -63,19 +57,16 @@
 - (void) performSelectorOnTarget:(id) target selector:(SEL) selector {
 	NSOperation* operation = [[LolaySelectorOperation alloc] initWithTarget:target withSelector:selector];
 	[self performOperation:operation];
-	[operation release];
 }
 
 - (void) performSelectorOnTarget:(id) target selector:(SEL) selector withObject:(id) argument {
 	NSOperation* operation = [[LolaySelectorOperation alloc] initWithTarget:target withSelector:selector withObject:argument];
 	[self performOperation:operation];
-	[operation release];
 }
 
 - (void) performSelectorOnTarget:(id) target selector:(SEL) selector withObject:(id) argument1 withObject:(id) argument2 {
 	NSOperation* operation = [[LolaySelectorOperation alloc] initWithTarget:target withSelector:selector withObject:argument1 withObject:argument2];
 	[self performOperation:operation];
-	[operation release];
 }
 
 #pragma mark -
@@ -85,7 +76,7 @@
 
 - (void) performBlockWithQueuePriority:(NSOperationQueuePriority) inQueuePriority withThreadPriority:(Float64) inThreadPriority block:(void (^)(void)) block {
 	if (block) {
-		NSBlockOperation* blockOperation = [NSBlockOperation blockOperationWithBlock:[[block copy] autorelease]];
+		NSBlockOperation* blockOperation = [NSBlockOperation blockOperationWithBlock:[block copy]];
 		blockOperation.queuePriority = self.queuePriority;
 		blockOperation.threadPriority = self.threadPriority;
 		[self performOperation:blockOperation];
