@@ -7,10 +7,10 @@
 
 @interface LolaySelectorOperation ()
 
-@property (nonatomic, retain, readwrite) id target;
+@property (nonatomic, strong, readwrite) id target;
 @property (nonatomic, assign, readwrite) SEL selector;
-@property (nonatomic, retain, readwrite) id object1;
-@property (nonatomic, retain, readwrite) id object2;
+@property (nonatomic, strong, readwrite) id object1;
+@property (nonatomic, strong, readwrite) id object2;
 
 @end
 

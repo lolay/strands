@@ -7,7 +7,7 @@
 
 @interface LolayQueueInfo ()
 
-@property (nonatomic, retain, readwrite) NSOperationQueue* queue;
+@property (nonatomic, strong, readwrite) NSOperationQueue* queue;
 @property (nonatomic, assign, readwrite) NSOperationQueuePriority queuePriority;
 @property (nonatomic, assign, readwrite) Float64 threadPriority;
 

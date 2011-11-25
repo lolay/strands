@@ -7,7 +7,7 @@
 
 @interface LolayQueueManager ()
 
-@property (nonatomic, retain, readwrite) NSMutableDictionary* queues; // LolayQueueInfo by queue name
+@property (nonatomic, strong, readwrite) NSMutableDictionary* queues; // LolayQueueInfo by queue name
 
 @end
 
