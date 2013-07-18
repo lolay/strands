@@ -22,7 +22,7 @@
 
 - (void) performOperation:(NSOperation*) operation;
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0 || TARGET_OS_MAC
 - (void) performBlock:(void (^)(void)) block;
 - (void) performBlockWithQueuePriority:(NSOperationQueuePriority) inQueuePriority block:(void (^)(void)) block;
 - (void) performBlockWithThreadPriority:(Float64) inThreadPriority block:(void (^)(void)) block;

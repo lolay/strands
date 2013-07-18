@@ -16,7 +16,7 @@
 
 #import <Foundation/Foundation.h>
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0 || TARGET_OS_MAC
 #define LolayQueueManagerMainQueue @"main"
 #endif
 
@@ -30,7 +30,7 @@
 - (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector withObject:(id) argument;
 - (void) performSelectorOnQueue:(NSString*) queueName target:(id) target selector:(SEL) selector withObject:(id) argument1 withObject:(id) argument2;
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0 || TARGET_OS_MAC
 - (void) performBlockOnQueue:(NSString*) queueName block:(void (^)(void)) block;
 - (void) performBlockOnQueue:(NSString*) queueName withQueuePriority:(NSOperationQueuePriority) queuePriority block:(void (^)(void)) block;
 - (void) performBlockOnQueue:(NSString*) queueName withThreadPriority:(Float32) threadPriority block:(void (^)(void)) block;
