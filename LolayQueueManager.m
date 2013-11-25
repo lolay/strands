@@ -44,7 +44,7 @@
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0
 		NSOperationQueue* mainQueue = [NSOperationQueue mainQueue];
 		LolayQueueInfo* mainQueueInfo = [[LolayQueueInfo alloc] initWithQueue:mainQueue withQueuePriority:NSOperationQueuePriorityNormal withThreadPriority:defaultThreadPriority];
-		[self.queues setObject:mainQueueInfo forKey:@"main"];
+		[self.queues setObject:mainQueueInfo forKey:LolayQueueManagerMainQueue];
 #endif		
 		for (NSDictionary* configQueue in configQueues) {
 			NSString* name = [configQueue objectForKey:@"name"];
@@ -52,7 +52,7 @@
 			NSNumber* queuePriority = [configQueue objectForKey:@"queuePriority"];
 			NSNumber* threadPriority = [configQueue objectForKey:@"threadPriority"];
 
-			if (name) {
+			if (name && ! [name isEqualToString:LolayQueueManagerMainQueue]) {
 				NSOperationQueue* queue = [NSOperationQueue new];
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0
 				queue.name = name;
