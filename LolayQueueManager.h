@@ -17,7 +17,7 @@
 #import <Foundation/Foundation.h>
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0
-#define LolayQueueManagerMainQueue @"main"
+#define LolayQueueManagerMainQueue @"LolayQueueManagerMainQueue"
 #endif
 
 @interface LolayQueueManager : NSObject
