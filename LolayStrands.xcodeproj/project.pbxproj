@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		324D0F65191ECB6A007ABFD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324D0F64191ECB6A007ABFD7 /* Foundation.framework */; };
+		324D0F73191ECB6A007ABFD7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324D0F72191ECB6A007ABFD7 /* XCTest.framework */; };
+		324D0F74191ECB6A007ABFD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324D0F64191ECB6A007ABFD7 /* Foundation.framework */; };
+		324D0F76191ECB6A007ABFD7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324D0F75191ECB6A007ABFD7 /* UIKit.framework */; };
+		324D0F79191ECB6A007ABFD7 /* libLolayStrands.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 324D0F61191ECB6A007ABFD7 /* libLolayStrands.a */; };
+		324D0F7F191ECB6A007ABFD7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 324D0F7D191ECB6A007ABFD7 /* InfoPlist.strings */; };
+		324D0F81191ECB6A007ABFD7 /* LolayStrandsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 324D0F80191ECB6A007ABFD7 /* LolayStrandsTests.m */; };
+		324D0F90191ECBBA007ABFD7 /* LolayQueueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 324D0F8B191ECBBA007ABFD7 /* LolayQueueInfo.m */; };
+		324D0F91191ECBBA007ABFD7 /* LolayQueueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 324D0F8B191ECBBA007ABFD7 /* LolayQueueInfo.m */; };
+		324D0F92191ECBBA007ABFD7 /* LolayQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 324D0F8D191ECBBA007ABFD7 /* LolayQueueManager.m */; };
+		324D0F93191ECBBA007ABFD7 /* LolayQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 324D0F8D191ECBBA007ABFD7 /* LolayQueueManager.m */; };
+		324D0F94191ECBBA007ABFD7 /* LolaySelectorOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 324D0F8F191ECBBA007ABFD7 /* LolaySelectorOperation.m */; };
+		324D0F95191ECBBA007ABFD7 /* LolaySelectorOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 324D0F8F191ECBBA007ABFD7 /* LolaySelectorOperation.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		324D0F77191ECB6A007ABFD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 324D0F59191ECB6A007ABFD7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 324D0F60191ECB6A007ABFD7;
+			remoteInfo = LolayStrands;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		324D0F5F191ECB6A007ABFD7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		324D0F61191ECB6A007ABFD7 /* libLolayStrands.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLolayStrands.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		324D0F64191ECB6A007ABFD7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		324D0F68191ECB6A007ABFD7 /* LolayStrands-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LolayStrands-Prefix.pch"; sourceTree = "<group>"; };
+		324D0F71191ECB6A007ABFD7 /* LolayStrandsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LolayStrandsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		324D0F72191ECB6A007ABFD7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		324D0F75191ECB6A007ABFD7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		324D0F7C191ECB6A007ABFD7 /* LolayStrandsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LolayStrandsTests-Info.plist"; sourceTree = "<group>"; };
+		324D0F7E191ECB6A007ABFD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		324D0F80191ECB6A007ABFD7 /* LolayStrandsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LolayStrandsTests.m; sourceTree = "<group>"; };
+		324D0F8A191ECBBA007ABFD7 /* LolayQueueInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LolayQueueInfo.h; sourceTree = SOURCE_ROOT; };
+		324D0F8B191ECBBA007ABFD7 /* LolayQueueInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LolayQueueInfo.m; sourceTree = SOURCE_ROOT; };
+		324D0F8C191ECBBA007ABFD7 /* LolayQueueManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LolayQueueManager.h; sourceTree = SOURCE_ROOT; };
+		324D0F8D191ECBBA007ABFD7 /* LolayQueueManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LolayQueueManager.m; sourceTree = SOURCE_ROOT; };
+		324D0F8E191ECBBA007ABFD7 /* LolaySelectorOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LolaySelectorOperation.h; sourceTree = SOURCE_ROOT; };
+		324D0F8F191ECBBA007ABFD7 /* LolaySelectorOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LolaySelectorOperation.m; sourceTree = SOURCE_ROOT; };
+		324D0F96191ECBE5007ABFD7 /* LolayStrandsGlobals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LolayStrandsGlobals.h; sourceTree = SOURCE_ROOT; };
+		324D0F97191ECD94007ABFD7 /* LolayStrands.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = LolayStrands.podspec; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		324D0F5E191ECB6A007ABFD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				324D0F65191ECB6A007ABFD7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		324D0F6E191ECB6A007ABFD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				324D0F73191ECB6A007ABFD7 /* XCTest.framework in Frameworks */,
+				324D0F76191ECB6A007ABFD7 /* UIKit.framework in Frameworks */,
+				324D0F74191ECB6A007ABFD7 /* Foundation.framework in Frameworks */,
+				324D0F79191ECB6A007ABFD7 /* libLolayStrands.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		324D0F58191ECB6A007ABFD7 = {
+			isa = PBXGroup;
+			children = (
+				324D0F66191ECB6A007ABFD7 /* LolayStrands */,
+				324D0F7A191ECB6A007ABFD7 /* LolayStrandsTests */,
+				324D0F63191ECB6A007ABFD7 /* Frameworks */,
+				324D0F62191ECB6A007ABFD7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		324D0F62191ECB6A007ABFD7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				324D0F61191ECB6A007ABFD7 /* libLolayStrands.a */,
+				324D0F71191ECB6A007ABFD7 /* LolayStrandsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		324D0F63191ECB6A007ABFD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				324D0F64191ECB6A007ABFD7 /* Foundation.framework */,
+				324D0F72191ECB6A007ABFD7 /* XCTest.framework */,
+				324D0F75191ECB6A007ABFD7 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		324D0F66191ECB6A007ABFD7 /* LolayStrands */ = {
+			isa = PBXGroup;
+			children = (
+				324D0F96191ECBE5007ABFD7 /* LolayStrandsGlobals.h */,
+				324D0F8A191ECBBA007ABFD7 /* LolayQueueInfo.h */,
+				324D0F8B191ECBBA007ABFD7 /* LolayQueueInfo.m */,
+				324D0F8C191ECBBA007ABFD7 /* LolayQueueManager.h */,
+				324D0F8D191ECBBA007ABFD7 /* LolayQueueManager.m */,
+				324D0F8E191ECBBA007ABFD7 /* LolaySelectorOperation.h */,
+				324D0F8F191ECBBA007ABFD7 /* LolaySelectorOperation.m */,
+				324D0F97191ECD94007ABFD7 /* LolayStrands.podspec */,
+				324D0F67191ECB6A007ABFD7 /* Supporting Files */,
+			);
+			path = LolayStrands;
+			sourceTree = "<group>";
+		};
+		324D0F67191ECB6A007ABFD7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				324D0F68191ECB6A007ABFD7 /* LolayStrands-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		324D0F7A191ECB6A007ABFD7 /* LolayStrandsTests */ = {
+			isa = PBXGroup;
+			children = (
+				324D0F80191ECB6A007ABFD7 /* LolayStrandsTests.m */,
+				324D0F7B191ECB6A007ABFD7 /* Supporting Files */,
+			);
+			path = LolayStrandsTests;
+			sourceTree = "<group>";
+		};
+		324D0F7B191ECB6A007ABFD7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				324D0F7C191ECB6A007ABFD7 /* LolayStrandsTests-Info.plist */,
+				324D0F7D191ECB6A007ABFD7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		324D0F60191ECB6A007ABFD7 /* LolayStrands */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 324D0F84191ECB6A007ABFD7 /* Build configuration list for PBXNativeTarget "LolayStrands" */;
+			buildPhases = (
+				324D0F5D191ECB6A007ABFD7 /* Sources */,
+				324D0F5E191ECB6A007ABFD7 /* Frameworks */,
+				324D0F5F191ECB6A007ABFD7 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LolayStrands;
+			productName = LolayStrands;
+			productReference = 324D0F61191ECB6A007ABFD7 /* libLolayStrands.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		324D0F70191ECB6A007ABFD7 /* LolayStrandsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 324D0F87191ECB6A007ABFD7 /* Build configuration list for PBXNativeTarget "LolayStrandsTests" */;
+			buildPhases = (
+				324D0F6D191ECB6A007ABFD7 /* Sources */,
+				324D0F6E191ECB6A007ABFD7 /* Frameworks */,
+				324D0F6F191ECB6A007ABFD7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				324D0F78191ECB6A007ABFD7 /* PBXTargetDependency */,
+			);
+			name = LolayStrandsTests;
+			productName = LolayStrandsTests;
+			productReference = 324D0F71191ECB6A007ABFD7 /* LolayStrandsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		324D0F59191ECB6A007ABFD7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Lolay;
+			};
+			buildConfigurationList = 324D0F5C191ECB6A007ABFD7 /* Build configuration list for PBXProject "LolayStrands" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 324D0F58191ECB6A007ABFD7;
+			productRefGroup = 324D0F62191ECB6A007ABFD7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				324D0F60191ECB6A007ABFD7 /* LolayStrands */,
+				324D0F70191ECB6A007ABFD7 /* LolayStrandsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		324D0F6F191ECB6A007ABFD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				324D0F7F191ECB6A007ABFD7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		324D0F5D191ECB6A007ABFD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				324D0F94191ECBBA007ABFD7 /* LolaySelectorOperation.m in Sources */,
+				324D0F90191ECBBA007ABFD7 /* LolayQueueInfo.m in Sources */,
+				324D0F92191ECBBA007ABFD7 /* LolayQueueManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		324D0F6D191ECB6A007ABFD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				324D0F93191ECBBA007ABFD7 /* LolayQueueManager.m in Sources */,
+				324D0F81191ECB6A007ABFD7 /* LolayStrandsTests.m in Sources */,
+				324D0F95191ECBBA007ABFD7 /* LolaySelectorOperation.m in Sources */,
+				324D0F91191ECBBA007ABFD7 /* LolayQueueInfo.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		324D0F78191ECB6A007ABFD7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 324D0F60191ECB6A007ABFD7 /* LolayStrands */;
+			targetProxy = 324D0F77191ECB6A007ABFD7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		324D0F7D191ECB6A007ABFD7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				324D0F7E191ECB6A007ABFD7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		324D0F82191ECB6A007ABFD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		324D0F83191ECB6A007ABFD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		324D0F85191ECB6A007ABFD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				DSTROOT = /tmp/LolayStrands.dst;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LolayStrands/LolayStrands-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		324D0F86191ECB6A007ABFD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				DSTROOT = /tmp/LolayStrands.dst;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LolayStrands/LolayStrands-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		324D0F88191ECB6A007ABFD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LolayStrands/LolayStrands-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LolayStrandsTests/LolayStrandsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		324D0F89191ECB6A007ABFD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LolayStrands/LolayStrands-Prefix.pch";
+				INFOPLIST_FILE = "LolayStrandsTests/LolayStrandsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		324D0F5C191ECB6A007ABFD7 /* Build configuration list for PBXProject "LolayStrands" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				324D0F82191ECB6A007ABFD7 /* Debug */,
+				324D0F83191ECB6A007ABFD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		324D0F84191ECB6A007ABFD7 /* Build configuration list for PBXNativeTarget "LolayStrands" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				324D0F85191ECB6A007ABFD7 /* Debug */,
+				324D0F86191ECB6A007ABFD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		324D0F87191ECB6A007ABFD7 /* Build configuration list for PBXNativeTarget "LolayStrandsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				324D0F88191ECB6A007ABFD7 /* Debug */,
+				324D0F89191ECB6A007ABFD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 324D0F59191ECB6A007ABFD7 /* Project object */;
+}

@@ -16,6 +16,7 @@
 
 #import "LolayQueueManager.h"
 #import "LolayQueueInfo.h"
+#import "LolayStrandsGlobals.h"
 
 @interface LolayQueueManager ()
 
