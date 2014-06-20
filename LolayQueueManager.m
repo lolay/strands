@@ -31,12 +31,27 @@
 #pragma mark -
 #pragma mark Lifecycle
 
-- (id) initWithPropertyList:(NSString*) pathForResource {
-	DLog(@"enter");
-	self = [super init];
-	
-	if (self) {
-		NSString* filePath = [[NSBundle bundleForClass:[self class]] pathForResource:pathForResource ofType:@"plist"];
+- (id)initWithPropertyList:(NSString *)pathForResource inBundle:(NSBundle *)bundle {
+    self = [super init];
+    
+    if (self != nil) {
+        if (bundle == nil) {
+            bundle = [NSBundle mainBundle];
+        }
+        
+        // get the extension.
+        NSString* extension = [pathForResource pathExtension];
+        
+        // if there was an extension strip it off. Otherwise we need to set the extension to
+        // plist.
+        if ([extension length] > 0) {
+            pathForResource = [pathForResource stringByDeletingPathExtension];
+        }
+        else {
+            extension = @"plist";
+        }
+        
+        NSString* filePath = [bundle pathForResource:pathForResource ofType:extension];
 		NSArray* configQueues = [NSArray arrayWithContentsOfFile:filePath];
 		
 		self.queues = [NSMutableDictionary dictionaryWithCapacity:configQueues.count];
@@ -46,18 +61,18 @@
 		NSOperationQueue* mainQueue = [NSOperationQueue mainQueue];
 		LolayQueueInfo* mainQueueInfo = [[LolayQueueInfo alloc] initWithQueue:mainQueue withQueuePriority:NSOperationQueuePriorityNormal withThreadPriority:defaultThreadPriority];
 		[self.queues setObject:mainQueueInfo forKey:LolayQueueManagerMainQueue];
-#endif		
+#endif
 		for (NSDictionary* configQueue in configQueues) {
 			NSString* name = [configQueue objectForKey:@"name"];
 			NSNumber* maxConcurrentOperationCount = [configQueue objectForKey:@"maxConcurrentOperationCount"];
 			NSNumber* queuePriority = [configQueue objectForKey:@"queuePriority"];
 			NSNumber* threadPriority = [configQueue objectForKey:@"threadPriority"];
-
+            
 			if (name && ! [name isEqualToString:LolayQueueManagerMainQueue]) {
 				NSOperationQueue* queue = [NSOperationQueue new];
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_4_0
 				queue.name = name;
-#endif		
+#endif
 				if (maxConcurrentOperationCount) {
 					queue.maxConcurrentOperationCount = [maxConcurrentOperationCount integerValue];
 				}
@@ -65,14 +80,26 @@
 				LolayQueueInfo* queueInfo = [[LolayQueueInfo alloc] initWithQueue:queue
 																withQueuePriority:queuePriority ? [queuePriority integerValue] : NSOperationQueuePriorityNormal
 															   withThreadPriority:threadPriority ? [threadPriority doubleValue] : defaultThreadPriority];
-			
+                
 				[self.queues setObject:queueInfo forKey:name];
 				
 				DLog(@"loaded queue=%@", queueInfo);
 			}
 		}
-	}
+
+        
+    }
+    
+    return self;
+}
+
+
+- (id)initWithPropertyList:(NSString*)pathForResource {
+	DLog(@"enter");
+    
+	self = [self initWithPropertyList:pathForResource inBundle:[NSBundle bundleForClass:[self class]]];
 	
+		
 	return self;
 }
 

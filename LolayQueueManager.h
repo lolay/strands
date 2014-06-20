@@ -22,6 +22,8 @@
 
 @interface LolayQueueManager : NSObject
 
+- (id)initWithPropertyList:(NSString *)pathForResource inBundle:(NSBundle *)bundle;
+
 - (id) initWithPropertyList:(NSString*) pathForResource;
 
 - (void) performOperationOnQueue:(NSString*) queueName operation:(NSOperation*) operation;
