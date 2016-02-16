@@ -36,8 +36,7 @@
 	self = [super init];
 	
 	if (self) {
-		NSString* filePath = [[NSBundle bundleForClass:[self class]] pathForResource:pathForResource ofType:@"plist"];
-		NSArray* configQueues = [NSArray arrayWithContentsOfFile:filePath];
+		NSArray* configQueues = [NSArray arrayWithContentsOfFile:pathForResource];
 		
 		self.queues = [NSMutableDictionary dictionaryWithCapacity:configQueues.count];
 		
