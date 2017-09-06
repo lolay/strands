@@ -85,7 +85,7 @@
 	if (block) {
 		NSBlockOperation* blockOperation = [NSBlockOperation blockOperationWithBlock:[block copy]];
 		blockOperation.queuePriority = self.queuePriority;
-		blockOperation.threadPriority = self.threadPriority;
+        blockOperation.qualityOfService = [self returnQualityOfServiceForThreadPriority:self.threadPriority];
 		[self performOperation:blockOperation];
 	}
 }
@@ -123,6 +123,22 @@
 
 - (NSUInteger) operationCount {
     return [self.queue operationCount];
+}
+
+#pragma mark - Helpers
+
+- (NSQualityOfService) returnQualityOfServiceForThreadPriority:(Float64) threadPriority {
+    if (threadPriority >= 0.75) {
+        return NSQualityOfServiceUserInteractive;
+    } else if (threadPriority >= 0.5) {
+        return NSQualityOfServiceUserInitiated;
+    } else if (threadPriority >= 0.25) {
+        return NSQualityOfServiceUtility;
+    } else if (threadPriority > 0) {
+        return NSQualityOfServiceBackground;
+    } else {
+        return NSQualityOfServiceDefault;
+    }
 }
 
 @end
